@@ -1,6 +1,4 @@
-# Bitespeed
-# My Project
-
+# Bitespeed Assignment
 This is a simple assignment to design a API verification endpoint.
 
 ## Installation
