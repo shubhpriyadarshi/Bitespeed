@@ -4,6 +4,11 @@ const sqlite3 = require("sqlite3").verbose();
 const app = express();
 app.use(express.json());
 
+const http = require("http");
+
+const port = process.env.PORT || 3000;
+const server = http.createServer(app);
+
 // Database configuration
 const db = new sqlite3.Database(":memory:");
 
@@ -254,8 +259,6 @@ app.get("/get", (req, res) => {
 	});
 });
 
-// Start the server
-const port = 3000;
-app.listen(port, () => {
-	console.log(`Server is listening on port ${port}`);
+server.listen(port, () => {
+	console.log(`Started on port ${port}`);
 });
